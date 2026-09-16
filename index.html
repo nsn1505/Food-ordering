@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GoodFood - Order Now</title>
+    <meta
+      name="description"
+      content="Nền tảng đặt món Việt hiện đại với gợi ý theo khẩu vị, tìm kiếm thông minh, giỏ hàng nhanh và hỗ trợ khách hàng."
+    />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <nav class="nav-shell">
+      
+        <a class="brand" href="#top" aria-label="Trang chủ GoodFood">
+          <span class="brand-mark">C</span>
+          <span>
+            <strong>GoodFood</strong>
+            <small>Vietnamese Food</small>
+          </span>
+        </a>
+
+        <div class="nav-links" aria-label="Các khu vực chính">
+          <a href="#discover">Khám phá</a>
+          <a href="#explorer">Món Việt</a>
+          <a href="#battle">Đấu món</a>
+          <a href="#tracking">Đơn hàng</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="notification-button" type="button" data-notification-toggle aria-label="Mở thông báo">
+            <span data-notification-count>0</span>
+          </button>
+          <div class="user-menu">
+            <strong data-user-name>Khách hàng</strong>
+            <small data-user-role>CUSTOMER</small>
+          </div>
+          <button class="ghost-action compact-action" type="button" data-logout>Đăng xuất</button>
+        </div>
+
+        <button class="cart-trigger" type="button" data-open-cart aria-label="Mở giỏ hàng">
+          <span>Giỏ hàng</span>
+          <strong data-cart-count>0</strong>
+        </button>
+      </nav>
+      <div class="notification-panel" data-notification-panel></div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Món Việt gần bạn</p>
+          <h1>Ăn gì hôm nay?</h1>
+          <p>
+            Chọn khẩu vị, tìm món bằng ngôn ngữ tự nhiên, hoặc để CraveCraft
+            gợi ý một bữa Việt hợp lúc, hợp túi tiền.
+          </p>
+
+          <div class="hero-actions" aria-label="Hành động chính">
+            <a class="primary-action" href="#discover">Đặt món ngay</a>
+            <button class="ghost-action" type="button" data-surprise-trigger>
+              Gợi ý bất ngờ
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Gợi ý theo khẩu vị">
+          <div class="panel-topline">
+            <span>Khẩu vị hôm nay</span>
+            <strong data-active-mood-label>Món ấm nóng</strong>
+          </div>
+          <div class="mood-grid" data-mood-list></div>
+          <article class="spotlight-card" data-spotlight></article>
+        </div>
+      </section>
+
+      <section class="search-band" aria-label="Tìm kiếm món ăn thông minh">
+        <div class="search-field">
+          <label for="food-search">Tìm món, quán, vùng miền, khẩu vị</label>
+          <input
+            id="food-search"
+            type="search"
+            placeholder="Thử 'bún bò dưới 70k', 'món cay', 'ăn cho 4 người'"
+            autocomplete="off"
+            data-search-input
+          />
+        </div>
+        <div class="filters" aria-label="Bộ lọc nhanh">
+          <label>
+            Ngân sách
+            <select data-budget-filter>
+              <option value="all">Tất cả</option>
+              <option value="budget">Dưới 50K</option>
+              <option value="normal">Phổ biến</option>
+              <option value="premium">Cao cấp</option>
+            </select>
+          </label>
+          <label>
+            Thời gian
+            <select data-time-filter>
+              <option value="all">Bất kỳ</option>
+              <option value="20">Dưới 20 phút</option>
+              <option value="30">Dưới 30 phút</option>
+              <option value="45">Dưới 45 phút</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="category-strip" aria-label="Danh mục món Việt" data-category-list></section>
+      <section class="region-strip" aria-label="Vùng miền" data-region-list></section>
+
+      <section class="section-shell" id="discover">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Món Việt dành cho bạn</p>
+            <h2>Gợi ý theo khẩu vị, vùng miền và ngân sách</h2>
+          </div>
+          <p data-result-count></p>
+        </div>
+        <div class="recommendation-layout" data-recommendations></div>
+      </section>
+
+      <section class="section-shell split-feature">
+        <div>
+          <p class="eyebrow">Giao nhanh dưới 30 phút</p>
+          <h2>Món nóng đến nhanh mà vẫn chỉn chu</h2>
+        </div>
+        <div class="quick-list" data-fast-list></div>
+      </section>
+
+      <section class="section-shell" id="explorer">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Khám phá món Việt</p>
+            <h2>Lướt món bằng hình ảnh, thêm vào giỏ tức thì</h2>
+          </div>
+          <button class="text-button" type="button" data-shuffle-feed>Đổi món</button>
+        </div>
+        <div class="explorer-feed" data-explorer-feed></div>
+      </section>
+
+      <section class="feature-grid">
+        <article class="battle-zone" id="battle">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow">Đấu món</p>
+              <h2>Để hai món Việt chọn giúp bữa tối</h2>
+            </div>
+            <button class="text-button" type="button" data-reset-battle>Làm lại</button>
+          </div>
+          <div class="battle-stage" data-battle-stage></div>
+        </article>
+
+        <article class="surprise-zone" id="surprise">
+          <p class="eyebrow">Gợi ý bất ngờ</p>
+          <h2>Khi bạn chưa biết nên ăn gì</h2>
+          <div class="surprise-controls">
+            <label>
+              Ngân sách
+              <select data-surprise-budget>
+                <option value="normal">Phổ biến</option>
+                <option value="budget">Dưới 50K</option>
+                <option value="premium">Cao cấp</option>
+              </select>
+            </label>
+            <label>
+              Tối đa
+              <select data-surprise-time>
+                <option value="30">30 phút</option>
+                <option value="20">20 phút</option>
+                <option value="45">45 phút</option>
+              </select>
+            </label>
+          </div>
+          <button class="primary-action full" type="button" data-surprise-button>
+            Mở gợi ý
+          </button>
+          <div class="surprise-result" data-surprise-result aria-live="polite"></div>
+        </article>
+      </section>
+
+      <section class="section-shell operations" id="tracking">
+        <div>
+          <p class="eyebrow">Luồng đặt hàng</p>
+          <h2>Theo dõi đơn, đặt nhóm và điểm thưởng đã sẵn sàng trong UI</h2>
+        </div>
+        <div class="ops-grid">
+          <article>
+            <span class="op-number">01</span>
+            <h3>Đặt nhóm</h3>
+            <p>Tạo mã phòng, mời bạn bè và xem rõ phần món của từng người.</p>
+            <button class="secondary-action" type="button" data-room-code>Tạo mã</button>
+            <strong data-room-output></strong>
+          </article>
+          <article>
+            <span class="op-number">02</span>
+            <h3>Theo dõi đơn</h3>
+            <ol class="timeline" aria-label="Trạng thái đơn hàng">
+              <li class="is-done">Đã xác nhận</li>
+              <li class="is-active">Quán đang chuẩn bị</li>
+              <li>Tài xế đã nhận</li>
+              <li>Đang giao</li>
+            </ol>
+          </article>
+          <article>
+            <span class="op-number">03</span>
+            <h3>Điểm thưởng</h3>
+            <p>Tích điểm, nhận huy hiệu và thử thách khám phá món Việt minh bạch.</p>
+            <div class="reward-meter"><span></span></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" aria-label="Giỏ hàng" aria-hidden="true" data-cart-drawer>
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">Giỏ hàng thông minh</p>
+          <h2>Đơn của bạn</h2>
+        </div>
+        <button class="icon-button" type="button" data-close-cart aria-label="Đóng giỏ hàng">X</button>
+      </div>
+      <div class="cart-items" data-cart-items></div>
+      <div class="cart-suggestion" data-cart-suggestion></div>
+      <div class="cart-summary" data-cart-summary></div>
+      <button class="primary-action full" type="button" data-checkout-button>Xem lại đơn</button>
+    </aside>
+    <div class="scrim" data-scrim></div>
+
+    <section class="support-chat" aria-label="Hỗ trợ khách hàng">
+      <button class="chat-toggle" type="button" data-chat-toggle>
+        Hỗ trợ <span data-chat-unread>1</span>
+      </button>
+      <div class="chat-panel" data-chat-panel>
+        <div class="chat-header">
+          <div>
+            <strong>Hỗ trợ khách hàng</strong>
+            <small>Online - thường trả lời trong vài phút</small>
+          </div>
+          <button class="icon-button" type="button" data-chat-close aria-label="Đóng hỗ trợ">X</button>
+        </div>
+        <div class="chat-issues" aria-label="Vấn đề nhanh">
+          <button type="button" data-chat-issue="Đơn hàng của tôi">Đơn hàng của tôi</button>
+          <button type="button" data-chat-issue="Giao hàng chậm">Giao hàng chậm</button>
+          <button type="button" data-chat-issue="Thiếu món">Thiếu món</button>
+          <button type="button" data-chat-issue="Sai món">Sai món</button>
+          <button type="button" data-chat-issue="Thanh toán">Thanh toán</button>
+          <button type="button" data-chat-issue="Hoàn tiền">Hoàn tiền</button>
+        </div>
+        <div class="chat-messages" data-chat-messages></div>
+        <form class="chat-form" data-chat-form>
+          <input data-chat-input type="text" placeholder="Nhập tin nhắn..." aria-label="Tin nhắn hỗ trợ" />
+          <button type="submit">Gửi</button>
+        </form>
+      </div>
+    </section>
+
+    <nav class="mobile-nav" aria-label="Điều hướng di động">
+      <a href="#top">Trang chủ</a>
+      <a href="#explorer">Món</a>
+      <a href="#food-search">Tìm</a>
+      <button type="button" data-open-cart>Giỏ <span data-cart-count-mobile>0</span></button>
+    </nav>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

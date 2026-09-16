@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin - CraveCraft</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-body">
+    <aside class="admin-sidebar">
+      <a class="brand" href="admin.html">
+        <span class="brand-mark">C</span>
+        <span>
+          <strong>CraveCraft</strong>
+          <small>Admin</small>
+        </span>
+      </a>
+      <nav>
+        <a href="#overview">Dashboard</a>
+        <a href="#orders">Orders</a>
+        <a href="#restaurants">Restaurants</a>
+        <a href="#menu">Menu</a>
+        <a href="#customers">Customers</a>
+        <a href="#support">Support</a>
+        <a href="#promotions">Vouchers</a>
+        <a href="#monitoring">System</a>
+        <a href="#audit">Audit Logs</a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="eyebrow">Bảng điều hành</p>
+          <h1>Vận hành nền tảng món Việt</h1>
+        </div>
+        <div class="admin-user">
+          <strong data-admin-name>Admin</strong>
+          <button class="ghost-action compact-action" type="button" data-logout>Đăng xuất</button>
+        </div>
+      </header>
+
+      <section class="demo-warning">
+        Dữ liệu vận hành trong trang tĩnh này là dữ liệu demo. Quyền ADMIN thật phải được xác thực phía server.
+      </section>
+
+      <section class="admin-kpis" id="overview">
+        <article><span>Doanh thu hôm nay</span><strong>12.450.000 ₫</strong></article>
+        <article><span>Đơn hàng hôm nay</span><strong>184</strong></article>
+        <article><span>Đơn đang xử lý</span><strong>27</strong></article>
+        <article><span>Đơn hoàn thành</span><strong>139</strong></article>
+        <article><span>Đơn đã hủy</span><strong>6</strong></article>
+        <article><span>Khách mới</span><strong>31</strong></article>
+        <article><span>Giá trị đơn TB</span><strong>86.000 ₫</strong></article>
+        <article><span>Ticket đang mở</span><strong>9</strong></article>
+      </section>
+
+      <section class="admin-grid">
+        <article class="admin-panel chart-panel">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow">Analytics</p>
+              <h2>Revenue by day</h2>
+            </div>
+            <select aria-label="Bộ lọc thời gian">
+              <option>Today</option>
+              <option>7 days</option>
+              <option>30 days</option>
+            </select>
+          </div>
+          <div class="bar-chart" aria-label="Biểu đồ doanh thu demo">
+            <span style="height: 42%"></span><span style="height: 62%"></span><span style="height: 51%"></span>
+            <span style="height: 76%"></span><span style="height: 68%"></span><span style="height: 88%"></span>
+            <span style="height: 72%"></span>
+          </div>
+        </article>
+        <article class="admin-panel">
+          <p class="eyebrow">Popular dishes</p>
+          <ol class="rank-list">
+            <li>Phở bò tái <strong>326</strong></li>
+            <li>Cơm tấm sườn bì chả <strong>281</strong></li>
+            <li>Bún bò Huế <strong>244</strong></li>
+            <li>Gà chiên nước mắm <strong>198</strong></li>
+          </ol>
+        </article>
+      </section>
+
+      <section class="admin-panel" id="orders">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Order management</p>
+            <h2>Đơn hàng</h2>
+          </div>
+          <div class="admin-filters">
+            <input type="search" placeholder="Tìm Order ID, khách hàng..." />
+            <select><option>Tất cả trạng thái</option><option>PENDING</option><option>PREPARING</option></select>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Order ID</th><th>Customer</th><th>Restaurant</th><th>Total</th><th>Payment</th><th>Status</th><th>Created At</th></tr>
+            </thead>
+            <tbody data-order-rows></tbody>
+          </table>
+        </div>
+        <button class="secondary-action" type="button" data-confirm-action>Cập nhật trạng thái đơn đã chọn</button>
+      </section>
+
+      <section class="admin-grid two">
+        <article class="admin-panel" id="restaurants">
+          <p class="eyebrow">Restaurant management</p>
+          <h2>Nhà hàng</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Name</th><th>City</th><th>Cuisine</th><th>Rating</th><th>Status</th></tr></thead>
+              <tbody data-restaurant-rows></tbody>
+            </table>
+          </div>
+        </article>
+        <article class="admin-panel" id="menu">
+          <p class="eyebrow">Menu management</p>
+          <h2>Món cần chú ý</h2>
+          <ul class="status-list">
+            <li><strong>Bánh xèo miền Tây</strong><span>Hết món tạm thời</span></li>
+            <li><strong>Lẩu Thái hải sản</strong><span>Đang giảm 15%</span></li>
+            <li><strong>Cà phê sữa đá</strong><span>Bán chạy</span></li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="admin-grid two">
+        <article class="admin-panel" id="support">
+          <p class="eyebrow">Admin support center</p>
+          <h2>Ticket hỗ trợ</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Customer</th><th>Order</th><th>Issue</th><th>Last</th><th>Priority</th><th>Status</th></tr></thead>
+              <tbody data-support-rows></tbody>
+            </table>
+          </div>
+        </article>
+        <article class="admin-panel" id="monitoring">
+          <p class="eyebrow">Operational monitoring</p>
+          <h2>Trạng thái vận hành demo</h2>
+          <ul class="status-list">
+            <li><strong>Active orders</strong><span>27</span></li>
+            <li><strong>Payment failures</strong><span>2</span></li>
+            <li><strong>Open support requests</strong><span>9</span></li>
+            <li><strong>Restaurants unavailable</strong><span>1</span></li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="admin-panel" id="audit">
+        <p class="eyebrow">Audit logs</p>
+        <h2>Nhật ký thao tác quan trọng</h2>
+        <ul class="audit-list">
+          <li>18:18 - Admin changed order #VN10245 from CONFIRMED to PREPARING.</li>
+          <li>17:56 - Admin marked Bánh xèo miền Tây as unavailable.</li>
+          <li>17:41 - Support reassigned ticket SUP-204 to agent Linh.</li>
+        </ul>
+      </section>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>

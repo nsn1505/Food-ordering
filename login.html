@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Đăng nhập - CraveCraft</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-layout">
+      <section class="auth-visual">
+        <a class="brand" href="login.html">
+          <span class="brand-mark">C</span>
+          <span>
+            <strong>CraveCraft</strong>
+            <small>Món Việt đúng lúc, đúng gu</small>
+          </span>
+        </a>
+        <div>
+          <p class="eyebrow">Chào mừng trở lại</p>
+          <h1>Đăng nhập để tiếp tục đặt món Việt.</h1>
+          <p>
+            Tài khoản demo: customer@cravecraft.vn / customer123,
+            admin@cravecraft.vn / admin123, support@cravecraft.vn / support123.
+          </p>
+        </div>
+      </section>
+
+      <section class="auth-card" aria-label="Đăng nhập">
+        <p class="eyebrow">Đăng nhập</p>
+        <h2>Vào tài khoản</h2>
+        <form data-login-form>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Mật khẩu
+            <span class="password-field">
+              <input id="password" name="password" type="password" autocomplete="current-password" required />
+              <button type="button" data-toggle-password>Hiện</button>
+            </span>
+          </label>
+          <div class="auth-row">
+            <label class="check-label"><input name="remember" type="checkbox" /> Ghi nhớ</label>
+            <a href="forgot-password.html">Quên mật khẩu?</a>
+          </div>
+          <p class="auth-message" data-auth-message></p>
+          <button class="primary-action full" type="submit">Đăng nhập</button>
+          <button class="ghost-action full" type="button">Tiếp tục với Google</button>
+        </form>
+        <p class="auth-footer">Chưa có tài khoản? <a href="signup.html">Đăng ký</a></p>
+      </section>
+    </main>
+    <script src="auth.js"></script>
+  </body>
+</html>

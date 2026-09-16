@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Support - CraveCraft</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-body support-desk-body">
+    <aside class="admin-sidebar">
+      <a class="brand" href="support.html">
+        <span class="brand-mark">C</span>
+        <span>
+          <strong>CraveCraft</strong>
+          <small>Support</small>
+        </span>
+      </a>
+      <nav>
+        <a href="#open">Open conversations</a>
+        <a href="#waiting">Waiting customers</a>
+        <a href="#assigned">Assigned</a>
+        <a href="#resolved">Resolved</a>
+      </nav>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="eyebrow">Support center</p>
+          <h1>Hỗ trợ khách hàng</h1>
+        </div>
+        <div class="admin-user">
+          <strong data-support-name>Support</strong>
+          <button class="ghost-action compact-action" type="button" data-logout>Đăng xuất</button>
+        </div>
+      </header>
+      <section class="support-workspace">
+        <aside class="conversation-list" data-conversation-list></aside>
+        <article class="support-thread">
+          <div class="chat-header static">
+            <div>
+              <strong>Minh Anh - #VN10245</strong>
+              <small>WAITING / HIGH</small>
+            </div>
+          </div>
+          <div class="chat-message"><p>Đơn của tôi giao hơi lâu, bạn kiểm tra giúp được không?</p><small>Khách hàng - 18:20</small></div>
+          <div class="chat-message is-customer"><p>Mình đang kiểm tra với tài xế. Dự kiến còn 8 phút.</p><small>Support - 18:22</small></div>
+          <form class="chat-form">
+            <input type="text" placeholder="Nhập phản hồi cho khách..." />
+            <button type="button" data-confirm-action>Gửi</button>
+          </form>
+        </article>
+        <aside class="customer-context">
+          <p class="eyebrow">Customer + order context</p>
+          <h2>Minh Anh</h2>
+          <p>Phone: 0901234567</p>
+          <p>Email: customer@cravecraft.vn</p>
+          <hr />
+          <p>Order ID: #VN10245</p>
+          <p>Restaurant: Phở Gánh Cô Mai</p>
+          <p>Status: PREPARING</p>
+          <p>Total: 112.000 ₫</p>
+          <p>Payment: COD / UNPAID</p>
+        </aside>
+      </section>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>

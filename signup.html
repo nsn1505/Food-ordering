@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Đăng ký - CraveCraft</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-layout">
+      <section class="auth-visual">
+        <a class="brand" href="login.html">
+          <span class="brand-mark">C</span>
+          <span>
+            <strong>CraveCraft</strong>
+            <small>Món Việt đúng lúc, đúng gu</small>
+          </span>
+        </a>
+        <div>
+          <p class="eyebrow">Tạo tài khoản khách hàng</p>
+          <h1>Đặt phở, bún, cơm tấm và món Việt yêu thích nhanh hơn.</h1>
+          <p>Đăng ký công khai luôn tạo vai trò CUSTOMER. Vai trò ADMIN cần quy trình nội bộ phía server.</p>
+        </div>
+      </section>
+
+      <section class="auth-card" aria-label="Đăng ký">
+        <p class="eyebrow">Đăng ký</p>
+        <h2>Tạo tài khoản</h2>
+        <form data-signup-form>
+          <label>Họ và tên <input name="name" type="text" autocomplete="name" required /></label>
+          <label>Email <input name="email" type="email" autocomplete="email" required /></label>
+          <label>Số điện thoại <input name="phone" type="tel" autocomplete="tel" placeholder="0901234567" required /></label>
+          <label>Mật khẩu <input name="password" type="password" autocomplete="new-password" required /></label>
+          <label>Xác nhận mật khẩu <input name="confirmPassword" type="password" autocomplete="new-password" required /></label>
+          <label class="check-label"><input name="terms" type="checkbox" /> Tôi đồng ý Điều khoản và Chính sách bảo mật</label>
+          <p class="auth-message" data-auth-message></p>
+          <button class="primary-action full" type="submit">Tạo tài khoản</button>
+        </form>
+        <p class="auth-footer">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+      </section>
+    </main>
+    <script src="auth.js"></script>
+  </body>
+</html>
